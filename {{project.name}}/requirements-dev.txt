@@ -1,0 +1,16 @@
+pylint
+twine
+wheel
+isort
+black
+{% if project.include_tests == 'pytest' -%}
+pytest
+{% else -%}
+{% endif -%}
+{% if project.include_docs == 'sphinx' -%}
+Sphinx
+{% elif project.include_docs == 'sphinx_rtd' -%}
+Sphinx==1.*
+sphinx-rtd-theme
+{% else -%}
+{% endif -%}
